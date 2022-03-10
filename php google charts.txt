@@ -9,3 +9,24 @@
                     }
 
                 ?> 
+
+
+
+
+
+<?php
+    
+                    $query = "SELECT item_no FROM items WHERE status = 'AVAILABLE'";
+                    $result = mysqli_query($connection,$query);
+                    
+                    while($row = mysqli_fetch_array($result) )
+                    {
+                    ?>
+                        ['<?php echo $row['item_no']?>' , $count_avail_items],
+                    
+                    <?php 
+                    }
+                    ?>
+
+
+https://stackoverflow.com/questions/14303723/create-complete-google-chart-json-data-table-from-mysql-data-using-custom-ph

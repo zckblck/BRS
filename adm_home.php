@@ -36,21 +36,12 @@ require_once('nav.php')
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                     ['Item Number', 'Status'],
-                    <?php
-    
-                    $query = "SELECT item_no FROM items WHERE status = 'AVAILABLE'";
-                    $result = mysqli_query($connection,$query);
-                    
-                    while($row = mysqli_fetch_array($result) )
-                    {
-                    ?>
-                        ['<?php echo $row['item_no']?>' , $count_avail_items],
-                    
-                    <?php 
-                    }
-                    ?>
-
+                  ['Task', 'Hours per Day'],
+                  ['Work',     11],
+                  ['Eat',      2],
+                  ['Commute',  2],
+                  ['Watch TV', 2],
+                  ['Sleep',    7]
                 ]);
 
                 var options = {
