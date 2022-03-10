@@ -1,0 +1,11 @@
+<?php
+    
+                    $query = "SELECT  FROM items WHERE status = 'AVAILABLE'";
+                    $result = mysqli_query($connection,$query);
+                    
+                    while($row = mysqli_fetch_array($result) )
+                    {
+                        echo "['".$row['item_no']."',".$row[$count_avail_items]."],";
+                    }
+
+                ?> 

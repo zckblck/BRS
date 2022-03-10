@@ -30,34 +30,31 @@ require_once('nav.php')
     
         <script type="text/javascript">
             
-              google.load("visualization", "1", {packages:["corechart"]});
-              google.setOnLoadCallback(drawChart);
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
 
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                  ['Item Number', 'Status'],
-                  <?php
+                     ['Item Number', 'Status'],
+                    <?php
     
-                    $query = "SELECT  FROM items WHERE status = 'AVAILABLE'";
+                    $query = "SELECT item_no FROM items WHERE status = 'AVAILABLE'";
                     $result = mysqli_query($connection,$query);
                     
                     while($row = mysqli_fetch_array($result) )
                     {
-                        echo "['".$row['item_no']."',".$row['status']."],";
-                    }
-
-                ?>
+                    ?>
+                        ['<?php echo $row['item_no']?>' , $count_avail_items],
                     
+                    <?php 
+                    }
+                    ?>
+
                 ]);
 
                 var options = {
-                  title: 'Item Status'
-                    pieHole: 0.5,
-                    pieSliceTextStyle: {
-                    color: 'black',
-                    },
-                    legend: 'none'
+                  title: 'My Daily Activities'
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -72,7 +69,7 @@ require_once('nav.php')
        
               
               <!-- ROW 1 -->
-              <div class="row" style="height:50px">
+              <div style="width: 910px; height: 510px;" id="piechart">
               </div>
 
               
