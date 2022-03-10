@@ -37,15 +37,15 @@ require_once('nav.php')
 
                 var data = google.visualization.arrayToDataTable([
                   ['Task', 'Hours per Day'],
-                  ['Work',     11],
-                  ['Eat',      2],
-                  ['Commute',  2],
-                  ['Watch TV', 2],
-                  ['Sleep',    7]
+                  ['Available Assets',     <?php echo $count_avail_items; ?>],
+                  ['Borrowed Assets',      <?php echo $count_borrowed_items; ?>],
+                  ['On-Going Repair Assets',  <?php echo $count_ongoingRepair_items; ?>],
+                  ['For Disposal Assets', <?php echo $count_forDisposal_items; ?>],
+                  ['Disposed Assets',    <?php echo $count_Disposed_items; ?>]
                 ]);
 
                 var options = {
-                  title: 'My Daily Activities'
+                  title: 'Report Summary'
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -60,7 +60,7 @@ require_once('nav.php')
        
               
               <!-- ROW 1 -->
-              <div style="width: 910px; height: 510px;" id="piechart">
+              <div style="height: 50px">
               </div>
 
               
@@ -69,7 +69,7 @@ require_once('nav.php')
 
                 <div class="col">
                     <div class="row">
-
+                        <!-- available assets div -->
                         <div class="col" style="padding-left:60px">
                             <div class="card  shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
@@ -112,7 +112,7 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-
+                        <!-- borrowed assets div -->
                         <div class="col">
                             <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
@@ -155,7 +155,7 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-
+                        <!-- on-going assets div -->
                         <div class="col">
                             <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
@@ -195,7 +195,7 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-
+                        <!-- for disposal assets div -->
                         <div class="col">
                             <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
@@ -235,7 +235,7 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-                            
+                        <!-- disposed assets div -->
                         <div class="col">
                             <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
@@ -275,9 +275,11 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-                            
-                            
-                            
+                        <!-- report summary div -->
+                        <div style="padding-left:60px">
+                           <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="width: 910px; height: 510px; padding-left:80px" id="piechart">
+                            </div> 
+                        </div>
                             
                             
                             
