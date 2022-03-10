@@ -36,7 +36,7 @@ require_once('nav.php')
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                  ['Task', 'Hours per Day'],
+                  ['Details', 'Count'],
                   ['Available Assets',     <?php echo $count_avail_items; ?>],
                   ['Borrowed Assets',      <?php echo $count_borrowed_items; ?>],
                   ['On-Going Repair Assets',  <?php echo $count_ongoingRepair_items; ?>],
@@ -47,15 +47,55 @@ require_once('nav.php')
                 var options = {
                   title: 'Report Summary',
                     is3D: true,
+                    pieStartAngle: 100,
                 };
 
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                var chart = new google.visualization.PieChart(document.getElementById('report_summary_chart_div'));
 
                 chart.draw(data, options);
               }
             
             
+            //most borrowed items chart
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart2);
             
+            function drawChart2() {
+              var data = google.visualization.arrayToDataTable([
+                ["Categoty", "Count", { role: "style" } ],
+                ["Laptop", <?php echo $count_MostBorrowed_items_Laptop; ?>, "#b87333"],
+                ["Desktop", <?php echo $count_MostBorrowed_items_Desktop; ?>, "silver"],
+                ["Workstation", <?php echo $count_MostBorrowed_items_Workstation; ?>, "gold"],
+                ["Monitor", <?php echo $count_MostBorrowed_items_Monitor; ?>, "color: #e5e4e2"],
+                ["Keyboard", <?php echo $count_MostBorrowed_items_Keyboard; ?>, "#b87333"],
+                ["Mouse", <?php echo $count_MostBorrowed_items_Mouse; ?>, "silver"],
+                ["Headset", <?php echo $count_MostBorrowed_items_Headset; ?>, "gold"],
+                ["Speaker", <?php echo $count_MostBorrowed_items_Speaker; ?>, "color: #e5e4e2"],
+                ["Flashdrive", <?php echo $count_MostBorrowed_items_Flashdrive; ?>, "#b87333"],
+                ["External HDD", <?php echo $count_MostBorrowed_items_ExternalHDD; ?>, "silver"],
+                ["HDMI Cable", <?php echo $count_MostBorrowed_items_HDMICable; ?>, "gold"],
+                ["Display Port Cable", <?php echo $count_MostBorrowed_items_DisplayPort; ?>, "color: #e5e4e2"],
+                ["VGA Cable", <?php echo $count_MostBorrowed_items_VGA; ?>, "#b87333"],
+              ]);
+
+              var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1,
+                               { calc: "stringify",
+                                 sourceColumn: 1,
+                                 type: "string",
+                                 role: "annotation" },
+                               2]);
+
+              var options = {
+                title: "Most Borrowed Items",
+                width: 900,
+                height: 500,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+              };
+              var chart = new google.visualization.ColumnChart(document.getElementById("most_borrowed_items_div"));
+              chart.draw(view, options);
+            }
             
             
         </script>
@@ -67,6 +107,32 @@ require_once('nav.php')
               <!-- ROW 1 -->
               <div style="height: 50px">
               </div>
+              
+              
+            <!-- ROW 3 -->
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        
+                        <!-- report summary div -->
+                        <div class="col">
+                            <div style="padding-left:20px; padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="width: 810px; height: 510px; padding-left:80px" id="report_summary_chart_div">
+                                </div> 
+                            </div>
+                        </div>
+
+                        <!-- most borrowed items div -->
+                        <div class="col">
+                            <div style="padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="most_borrowed_items_div">
+                            </div> 
+                            </div>
+                        </div>
+                
+                </div>
+              </div>
+            </div>
 
               
               <!-- ROW 2 -->
@@ -280,11 +346,7 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
-                        <!-- report summary div -->
-                        <div style="padding-left:60px; padding-bottom:60px">
-                           <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="width: 910px; height: 510px; padding-left:80px" id="piechart">
-                            </div> 
-                        </div>
+                        
                             
                             
                             
@@ -293,6 +355,8 @@ require_once('nav.php')
                 </div>
 
             </div>
+              
+
          
 
        

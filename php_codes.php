@@ -24,6 +24,45 @@ $count_Disposed_items = count_data($connection,"items","status = 'DISPOSED'");
 
 
 
+//to count most borrowed items on adm_home.php
+//count number of Laptops
+$count_MostBorrowed_items_Laptop = count_data($connection,"borrowed_items","category = 'Laptop'");
+
+//count number of Desktops
+$count_MostBorrowed_items_Desktop = count_data($connection,"borrowed_items","category = 'Desktop'");
+
+//count number of Workstation
+$count_MostBorrowed_items_Workstation = count_data($connection,"borrowed_items","category = 'Workstation'");
+
+//count number of Monitor
+$count_MostBorrowed_items_Monitor = count_data($connection,"borrowed_items","category = 'Monitor'");
+
+//count number of Keyboard
+$count_MostBorrowed_items_Keyboard = count_data($connection,"borrowed_items","category = 'Keyboard'");
+
+//count number of Mouse
+$count_MostBorrowed_items_Mouse = count_data($connection,"borrowed_items","category = 'Mouse'");
+
+//count number of Headset
+$count_MostBorrowed_items_Headset = count_data($connection,"borrowed_items","category = 'Headset'");
+
+//count number of Speaker
+$count_MostBorrowed_items_Speaker = count_data($connection,"borrowed_items","category = 'Speaker'");
+
+//count number of Flashdrive
+$count_MostBorrowed_items_Flashdrive = count_data($connection,"borrowed_items","category = 'Flashdrive'");
+
+//count number of External HDD
+$count_MostBorrowed_items_ExternalHDD = count_data($connection,"borrowed_items","category = 'External HDD'");
+
+//count number of HDMI Cable
+$count_MostBorrowed_items_HDMICable = count_data($connection,"borrowed_items","category = 'HDMI Cable'");
+
+//count number of Display Port Cable
+$count_MostBorrowed_items_DisplayPort = count_data($connection,"borrowed_items","category = 'DisplayPort Cable'");
+
+//count number of VGA Cable
+$count_MostBorrowed_items_VGA = count_data($connection,"borrowed_items","category = 'VGA Cable'");
 
 
 //-------------------------------------LOGIN BUTTON LOGIN.PHP
