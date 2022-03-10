@@ -141,7 +141,6 @@
                               <option value="AVAILABLE">AVAILABLE</option>
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
-                              <option value="FOR REPAIR">FOR REPAIR</option>
                               <option value="UNDER REPAIR">UNDER REPAIR</option>
                               <option value="DISPOSED">DISPOSED</option>
                               <option value=""></option>
@@ -255,7 +254,6 @@
                               <option value="AVAILABLE">AVAILABLE</option>
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
-                              <option value="FOR REPAIR">FOR REPAIR</option>
                               <option value="UNDER REPAIR">UNDER REPAIR</option>
                               <option value="DISPOSED">DISPOSED</option>
                               <option value=""></option>

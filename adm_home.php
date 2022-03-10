@@ -29,7 +29,7 @@ require_once('nav.php')
         
     
         <script type="text/javascript">
-            
+            //report summary chart
               google.charts.load('current', {'packages':['corechart']});
               google.charts.setOnLoadCallback(drawChart);
 
@@ -45,13 +45,18 @@ require_once('nav.php')
                 ]);
 
                 var options = {
-                  title: 'Report Summary'
+                  title: 'Report Summary',
+                    is3D: true,
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
                 chart.draw(data, options);
               }
+            
+            
+            
+            
             
         </script>
   
@@ -276,7 +281,7 @@ require_once('nav.php')
                             </div>
                         </div>
                         <!-- report summary div -->
-                        <div style="padding-left:60px">
+                        <div style="padding-left:60px; padding-bottom:60px">
                            <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="width: 910px; height: 510px; padding-left:80px" id="piechart">
                             </div> 
                         </div>
