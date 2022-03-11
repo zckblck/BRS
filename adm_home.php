@@ -45,7 +45,7 @@ require_once('nav.php')
                 ]);
 
                 var options = {
-                  title: 'Report Summary',
+                    title: 'Report Summary',
                     is3D: true,
                     pieStartAngle: 100,
                 };
@@ -104,26 +104,28 @@ require_once('nav.php')
           <div class="container-fluid">
        
               
-              <!-- ROW 1 -->
+              
               <div style="height: 50px">
               </div>
               
               
-            <!-- ROW 3 -->
+            <!-- ROW 1 -->
             <div class="row">
                 <div class="col">
                     <div class="row">
                         
-                        <!-- report summary div -->
+                        <!-- 1st column -->
                         <div class="col">
+                            <!-- report summary div -->
                             <div style="padding-left:20px; padding-bottom:60px">
                                 <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="width: 810px; height: 510px; padding-left:80px" id="report_summary_chart_div">
                                 </div> 
                             </div>
                         </div>
-
-                        <!-- most borrowed items div -->
+                        
+                        <!-- 2nd column -->
                         <div class="col">
+                            <!-- most borrowed items div -->
                             <div style="padding-bottom:60px">
                                 <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="most_borrowed_items_div">
                             </div> 
@@ -139,7 +141,7 @@ require_once('nav.php')
             <div class="row">
 
                 <div class="col">
-                    <div class="row">
+                    <div class="row" style="padding-bottom: 30px">
                         <!-- available assets div -->
                         <div class="col" style="padding-left:60px">
                             <div class="card  shadow-lg mb-5 bg-white rounded">
@@ -347,13 +349,47 @@ require_once('nav.php')
                             </div>
                         </div>
                         
-                            
-                            
-                            
+     
                     </div>
-
                 </div>
-
+            </div>
+              
+              
+              <!-- ROW 3 -->
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        
+                        <!-- 1st column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-left:20px; padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                </div> 
+                            </div>
+                        </div>
+                        
+                        <!-- 2nd column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                            </div> 
+                            </div>
+                        </div>
+                        
+                        <!-- 3rd column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                            </div> 
+                            </div>
+                        </div>
+                        
+                
+                </div>
+              </div>
             </div>
               
 
