@@ -800,7 +800,7 @@ while($row = $result->fetch_assoc() )
     $tr_borrow .= "<tr onclick='AJAX_BORROW($counter)'>
             <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
-            <td >$item_no</td>
+            <td style='font-style:italic;font-weight:bold'>$item_no</td>
             <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>

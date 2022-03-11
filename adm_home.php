@@ -46,7 +46,7 @@ require_once('nav.php')
                 ]);
 
                 var options = {
-                    title: 'Report Summary',
+                    title: 'Item Report Summary',
                     is3D: true,
                     
                 };
