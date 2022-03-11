@@ -70,7 +70,8 @@ require_once('connection.php');
             </div>
                 
             <nav class="navbar fixed-bottom navbar-dark bg-dark">
-              <a style="color:white">© all rights reserve 2022</a>
+              <a style="color:white ; position : left ; padding-left : 10px">© all rights reserve 2022</a>
+                <a style="color:white ; position : right ; padding-right : 10px">©LNX Systems</a>
             </nav>          
         </div>
  

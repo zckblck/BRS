@@ -352,45 +352,6 @@ function count_data($conn,$table_name,$condition)
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-
-//------------------display on table on user_home.php
-$tr_item = "";
-if(ISSET($_POST['btn_filter']))
-{
-    $dropdowncategory = $_POST['dropdown_categories'];
-
-    $query = "SELECT * FROM items WHERE category LIKE '%$dropdowncategory%' AND status = 'AVAILABLE'";
-
-    $result = mysqli_query($connection,$query );
- 
-    while($row = $result->fetch_assoc() )
-    {
-        $control_no = $row['ctrl_no'];
-        $asset_tag_no = $row['asset_tag_no'];
-        $item_no = $row['item_no'];
-        $category = $row['category'];
-        $serial_no = $row['serial_no'];
-        $item_details = $row['item_details'];
-        $status = $row['status'];
-
-        //to click on table
-        $tr_item .= "<tr>
-                        <td>$control_no</td>
-                        <td>$asset_tag_no</td>
-                        <td>$item_no</td>
-                        <td style='font-style:oblique;font-weight:bold'>$category</td>
-                        <td>$serial_no</td>
-                        <td>$item_details</td>
-                        <td style='font-weight:bold'>$status</td>
-                    </tr>  "; 
-    }
- 
-    
-}
-
-
-
-
 //------------------display on table on UPDATE ITEM MODAL adm_home.php
 $query = "SELECT * FROM items";
 
@@ -553,6 +514,8 @@ while($row = $result->fetch_assoc() )
 
 
 
+
+
 //------------------display on table on BORROWED LOGS MODAL adm_home.php
 $query = "SELECT * FROM borrowed_items";
 
@@ -632,6 +595,52 @@ while($row = $result->fetch_assoc() )
 
 
 
+
+
+
+
+
+
+
+
+//------------------display on table on RECENT BORROWED ITEMS TABLE adm_home.php
+$query = "SELECT * FROM `borrowed_items` ORDER BY `borrowed_items`.`id` DESC";
+
+$result = mysqli_query($connection,$query);
+
+$tr_recent_borrowed_items = "";
+$counter = 0;
+while($row = $result->fetch_assoc() )
+{
+    $borrowed_date = $row['borrowed_date'];
+    $borrowed_by = $row['borrowed_by'];
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $remarks = $row['remarks'];
+    $status = $row['status'];
+    
+    //to click on table
+    $tr_recent_borrowed_items .= "<tr'>
+            <td style='font-weight:bold'>$borrowed_date</td>
+            <td style='font-weight:bold'>$borrowed_by</td>
+            <td style='font-weight:bold'>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$remarks</td>
+            <td>$status</td>
+        </tr>  "; 
+    }
+
+
+
+
 //------------------display on table on ON-GOING REPAIR TABLE in adm_home.php
 $query = "SELECT * FROM items WHERE status = 'UNDER REPAIR'";
 
@@ -691,7 +700,7 @@ while($row = $result->fetch_assoc() )
     }
 
 
-//------------------display on table on FOR DISPOSAL  TABLE in adm_home.php
+//------------------display on table on  DISPOSED  TABLE in adm_home.php
 $query = "SELECT * FROM items WHERE status = 'DISPOSED'";
 
 $result = mysqli_query($connection,$query);
@@ -724,6 +733,48 @@ while($row = $result->fetch_assoc() )
 
 
 
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+//------------------display on table on user_home.php
+$tr_item = "";
+if(ISSET($_POST['btn_filter']))
+{
+    $dropdowncategory = $_POST['dropdown_categories'];
+
+    $query = "SELECT * FROM items WHERE category LIKE '%$dropdowncategory%' AND status = 'AVAILABLE'";
+
+    $result = mysqli_query($connection,$query );
+ 
+    while($row = $result->fetch_assoc() )
+    {
+        $control_no = $row['ctrl_no'];
+        $asset_tag_no = $row['asset_tag_no'];
+        $item_no = $row['item_no'];
+        $category = $row['category'];
+        $serial_no = $row['serial_no'];
+        $item_details = $row['item_details'];
+        $status = $row['status'];
+
+        //to click on table
+        $tr_item .= "<tr>
+                        <td>$control_no</td>
+                        <td>$asset_tag_no</td>
+                        <td>$item_no</td>
+                        <td style='font-style:oblique;font-weight:bold'>$category</td>
+                        <td>$serial_no</td>
+                        <td>$item_details</td>
+                        <td style='font-weight:bold'>$status</td>
+                    </tr>  "; 
+    }
+ 
+    
+}
+
+
+
+
+
 
 //------------------display on table on BORROW MODAL user_home.php
 $query = "SELECT * FROM items WHERE status = 'AVAILABLE'";
@@ -749,7 +800,7 @@ while($row = $result->fetch_assoc() )
     $tr_borrow .= "<tr onclick='AJAX_BORROW($counter)'>
             <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
-            <td>$item_no</td>
+            <td >$item_no</td>
             <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>

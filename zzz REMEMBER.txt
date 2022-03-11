@@ -5,4 +5,22 @@ change index.php link
 copy categories table from original BRS
 copy department table from original BRS
 
-xampp 7.2.31
+
+
+this program is running in xampp 7.2.31
+
+
+
+
+when adding new items in category, add chart elements in array in adm_home.php when adding new item category
+
+
+
+
+
+process of coding:
+
+modal.php for designs of modal
+functions.php to display everything in tables
+modal_onclick_select.js AJAX for holding data to display in textbox
+php_codes.php to edit process flow

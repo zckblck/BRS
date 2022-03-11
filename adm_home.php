@@ -17,10 +17,11 @@ require_once('nav.php')
     <body>
         
         <style>
-            .card{
+            
+            .card_size{
                 width: 300PX;
             }
-            .card-header{
+            .card-header_style_5{
                 background-color: #3c4737;
                 color: #dbe2ef;
                 width: 300PX;
@@ -47,7 +48,7 @@ require_once('nav.php')
                 var options = {
                     title: 'Report Summary',
                     is3D: true,
-                    pieStartAngle: 100,
+                    
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('report_summary_chart_div'));
@@ -63,19 +64,19 @@ require_once('nav.php')
             function drawChart2() {
               var data = google.visualization.arrayToDataTable([
                 ["Categoty", "Count", { role: "style" } ],
-                ["Laptop", <?php echo $count_MostBorrowed_items_Laptop; ?>, "#b87333"],
-                ["Desktop", <?php echo $count_MostBorrowed_items_Desktop; ?>, "silver"],
-                ["Workstation", <?php echo $count_MostBorrowed_items_Workstation; ?>, "gold"],
-                ["Monitor", <?php echo $count_MostBorrowed_items_Monitor; ?>, "color: #e5e4e2"],
-                ["Keyboard", <?php echo $count_MostBorrowed_items_Keyboard; ?>, "#b87333"],
-                ["Mouse", <?php echo $count_MostBorrowed_items_Mouse; ?>, "silver"],
-                ["Headset", <?php echo $count_MostBorrowed_items_Headset; ?>, "gold"],
-                ["Speaker", <?php echo $count_MostBorrowed_items_Speaker; ?>, "color: #e5e4e2"],
-                ["Flashdrive", <?php echo $count_MostBorrowed_items_Flashdrive; ?>, "#b87333"],
-                ["External HDD", <?php echo $count_MostBorrowed_items_ExternalHDD; ?>, "silver"],
-                ["HDMI Cable", <?php echo $count_MostBorrowed_items_HDMICable; ?>, "gold"],
-                ["Display Port Cable", <?php echo $count_MostBorrowed_items_DisplayPort; ?>, "color: #e5e4e2"],
-                ["VGA Cable", <?php echo $count_MostBorrowed_items_VGA; ?>, "#b87333"],
+                ["Laptop", <?php echo $count_MostBorrowed_items_Laptop; ?>, "#001524"],
+                ["Desktop", <?php echo $count_MostBorrowed_items_Desktop; ?>, "#15616d"],
+                ["Workstation", <?php echo $count_MostBorrowed_items_Workstation; ?>, "#6f2028"],
+                ["Monitor", <?php echo $count_MostBorrowed_items_Monitor; ?>, "color: #587613"],
+                ["Keyboard", <?php echo $count_MostBorrowed_items_Keyboard; ?>, "#ff7d00"],
+                ["Mouse", <?php echo $count_MostBorrowed_items_Mouse; ?>, "#78290f"],
+                ["Headset", <?php echo $count_MostBorrowed_items_Headset; ?>, "#001524"],
+                ["Speaker", <?php echo $count_MostBorrowed_items_Speaker; ?>, "color: #15616d"],
+                ["Flashdrive", <?php echo $count_MostBorrowed_items_Flashdrive; ?>, "#6f2028"],
+                ["External HDD", <?php echo $count_MostBorrowed_items_ExternalHDD; ?>, "#587613"],
+                ["HDMI Cable", <?php echo $count_MostBorrowed_items_HDMICable; ?>, "#ff7d00"],
+                ["Display Port Cable", <?php echo $count_MostBorrowed_items_DisplayPort; ?>, "color: #78290f"],
+                ["VGA Cable", <?php echo $count_MostBorrowed_items_VGA; ?>, "#001524"],
               ]);
 
               var view = new google.visualization.DataView(data);
@@ -103,8 +104,6 @@ require_once('nav.php')
 
           <div class="container-fluid">
        
-              
-              
               <div style="height: 50px">
               </div>
               
@@ -126,7 +125,7 @@ require_once('nav.php')
                         <!-- 2nd column -->
                         <div class="col">
                             <!-- most borrowed items div -->
-                            <div style="padding-bottom:60px">
+                            <div style="padding-bottom:30px">
                                 <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="most_borrowed_items_div">
                             </div> 
                             </div>
@@ -135,17 +134,102 @@ require_once('nav.php')
                 </div>
               </div>
             </div>
-
+              
+              
+              
+              
               
               <!-- ROW 2 -->
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        
+                        <!-- 1st column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-left:20px; padding-bottom:10px">
+                                
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                    <div class="card">
+                                      <div class="card-header" style="background-color: #15616d ; color: #dbe2ef">
+                                          <h5 style="text-align:left">RECENTLY BORROWED ITEMS</h5>
+                                        </div>
+                                      <div class="card-body">  
+                                        <div class="col" style="overflow:scroll ; height:350px; width: 550px">
+                                            <!-- Table Grid-->
+                                            <table class="table table-hover border-dark" border=1>
+
+                                                <thead>
+                                                    <tr style="text-align:center" padding: 70px 0;>
+                                                        <th>BORROWED DATE / TIME</th>
+                                                        <th>CURRENTLY BORROWED BY</th>
+                                                        <th>CONTROL NUMBER</th>
+                                                        <th>ASSET TAG NUMBER</th>
+                                                        <th>ITEM NUMBER</th>
+                                                        <th>CATEGORY</th>
+                                                        <th>SERIAL NUMBER</th>
+                                                        <th>ITEM DETAILS</th>
+                                                        <th>REMARKS</th>
+                                                        <th>STATUS</th>
+
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody style="text-align:center">
+
+                                                    <?php echo $tr_recent_borrowed_items ?>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div> 
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- 2nd column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                    
+                                    
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                        
+                        <!-- 3rd column -->
+                        <div class="col">
+                            <!-- div -->
+                            <div style="padding-bottom:60px">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                </div> 
+                            </div>
+                        </div>
+                        
+                
+                </div>
+              </div>
+            </div>
+              
+              
+              
+              
+
+              
+              <!-- ROW 3 -->
             <div class="row">
 
                 <div class="col">
                     <div class="row" style="padding-bottom: 30px">
                         <!-- available assets div -->
                         <div class="col" style="padding-left:60px">
-                            <div class="card  shadow-lg mb-5 bg-white rounded">
-                                <div class="card-header">
+                            <div class="card  card_size shadow-lg mb-5 bg-white rounded">
+                                <div class="card-header card-header_style_5">
                                     <h5 style="text-align:center">AVAILABLE ITEMS</h5>
                                 </div>
                                 <div class="card-block">
@@ -185,10 +269,11 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- borrowed assets div -->
                         <div class="col">
-                            <div class="card    shadow-lg mb-5 bg-white rounded">
-                                <div class="card-header">
+                            <div class="card card_size shadow-lg mb-5 bg-white rounded">
+                                <div class="card-header card-header_style_5">
                                     <h5 style="text-align:center">BORROWED ITEMS</h5>
                                 </div>
                                 <div class="card-block">
@@ -228,10 +313,11 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- on-going assets div -->
                         <div class="col">
-                            <div class="card    shadow-lg mb-5 bg-white rounded">
-                                <div class="card-header">
+                            <div class="card card_size shadow-lg mb-5 bg-white rounded">
+                                <div class="card-header card-header_style_5">
                                     <h5 style="text-align:center">ON-GOING REPAIR</h5>
                                 </div>
                                 <div class="card-block">
@@ -268,10 +354,11 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- for disposal assets div -->
                         <div class="col">
-                            <div class="card    shadow-lg mb-5 bg-white rounded">
-                                <div class="card-header">
+                            <div class="card card_size shadow-lg mb-5 bg-white rounded">
+                                <div class="card-header card-header_style_5">
                                     <h5 style="text-align:center">FOR DISPOSAL</h5>
                                 </div>
                                 <div class="card-block">
@@ -308,10 +395,11 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- disposed assets div -->
                         <div class="col">
-                            <div class="card    shadow-lg mb-5 bg-white rounded">
-                                <div class="card-header">
+                            <div class="card card_size shadow-lg mb-5 bg-white rounded">
+                                <div class="card-header card-header_style_5">
                                     <h5 style="text-align:center">DISPOSED</h5>
                                 </div>
                                 <div class="card-block">
@@ -355,42 +443,7 @@ require_once('nav.php')
             </div>
               
               
-              <!-- ROW 3 -->
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        
-                        <!-- 1st column -->
-                        <div class="col">
-                            <!-- div -->
-                            <div style="padding-left:20px; padding-bottom:60px">
-                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
-                                </div> 
-                            </div>
-                        </div>
-                        
-                        <!-- 2nd column -->
-                        <div class="col">
-                            <!-- div -->
-                            <div style="padding-bottom:60px">
-                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
-                            </div> 
-                            </div>
-                        </div>
-                        
-                        <!-- 3rd column -->
-                        <div class="col">
-                            <!-- div -->
-                            <div style="padding-bottom:60px">
-                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
-                            </div> 
-                            </div>
-                        </div>
-                        
-                
-                </div>
-              </div>
-            </div>
+              
               
 
          
