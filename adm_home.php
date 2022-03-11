@@ -57,6 +57,7 @@ require_once('nav.php')
               }
             
             
+            
             //most borrowed items chart
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(drawChart2);
@@ -95,6 +96,49 @@ require_once('nav.php')
                 legend: { position: "none" },
               };
               var chart = new google.visualization.ColumnChart(document.getElementById("most_borrowed_items_div"));
+              chart.draw(view, options);
+            }
+            
+            
+            
+            //most borrowed items chart
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart3);
+            
+            function drawChart3() {
+              var data = google.visualization.arrayToDataTable([
+                ["Categoty", "Count", { role: "style" } ],
+                ["Laptop", <?php echo $count_MostBorrowed_items_Laptop; ?>, "#285912"],
+                ["Desktop", <?php echo $count_MostBorrowed_items_Desktop; ?>, "#d99152"],
+                ["Workstation", <?php echo $count_MostBorrowed_items_Workstation; ?>, "#a64208"],
+                ["Monitor", <?php echo $count_MostBorrowed_items_Monitor; ?>, "color: #bf9a84"],
+                ["Keyboard", <?php echo $count_MostBorrowed_items_Keyboard; ?>, "#590202"],
+                ["Mouse", <?php echo $count_MostBorrowed_items_Mouse; ?>, "#285912"],
+                ["Headset", <?php echo $count_MostBorrowed_items_Headset; ?>, "#d99152"],
+                ["Speaker", <?php echo $count_MostBorrowed_items_Speaker; ?>, "color: #a64208"],
+                ["Flashdrive", <?php echo $count_MostBorrowed_items_Flashdrive; ?>, "#bf9a84"],
+                ["External HDD", <?php echo $count_MostBorrowed_items_ExternalHDD; ?>, "#590202"],
+                ["HDMI Cable", <?php echo $count_MostBorrowed_items_HDMICable; ?>, "#285912"],
+                ["Display Port Cable", <?php echo $count_MostBorrowed_items_DisplayPort; ?>, "color: #d99152"],
+                ["VGA Cable", <?php echo $count_MostBorrowed_items_VGA; ?>, "#a64208"],
+              ]);
+
+              var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1,
+                               { calc: "stringify",
+                                 sourceColumn: 1,
+                                 type: "string",
+                                 role: "annotation" },
+                               2]);
+
+              var options = {
+                title: "Total Assets",
+                width: 600,
+                height: 435,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+              };
+              var chart = new google.visualization.BarChart(document.getElementById("total_assets_chart"));
               chart.draw(view, options);
             }
             
@@ -194,7 +238,7 @@ require_once('nav.php')
                         <div class="col">
                             <!-- div -->
                             <div style="padding-bottom:60px">
-                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="padding-left:80px" id="total_assets_chart">
                                     
                                     
                                     
