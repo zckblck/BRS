@@ -101,26 +101,26 @@ require_once('nav.php')
             
             
             
-            //most borrowed items chart
+            //total items chart
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(drawChart3);
             
             function drawChart3() {
               var data = google.visualization.arrayToDataTable([
                 ["Categoty", "Count", { role: "style" } ],
-                ["Laptop", <?php echo $count_MostBorrowed_items_Laptop; ?>, "#285912"],
-                ["Desktop", <?php echo $count_MostBorrowed_items_Desktop; ?>, "#d99152"],
-                ["Workstation", <?php echo $count_MostBorrowed_items_Workstation; ?>, "#a64208"],
-                ["Monitor", <?php echo $count_MostBorrowed_items_Monitor; ?>, "color: #bf9a84"],
-                ["Keyboard", <?php echo $count_MostBorrowed_items_Keyboard; ?>, "#590202"],
-                ["Mouse", <?php echo $count_MostBorrowed_items_Mouse; ?>, "#285912"],
-                ["Headset", <?php echo $count_MostBorrowed_items_Headset; ?>, "#d99152"],
-                ["Speaker", <?php echo $count_MostBorrowed_items_Speaker; ?>, "color: #a64208"],
-                ["Flashdrive", <?php echo $count_MostBorrowed_items_Flashdrive; ?>, "#bf9a84"],
-                ["External HDD", <?php echo $count_MostBorrowed_items_ExternalHDD; ?>, "#590202"],
-                ["HDMI Cable", <?php echo $count_MostBorrowed_items_HDMICable; ?>, "#285912"],
-                ["Display Port Cable", <?php echo $count_MostBorrowed_items_DisplayPort; ?>, "color: #d99152"],
-                ["VGA Cable", <?php echo $count_MostBorrowed_items_VGA; ?>, "#a64208"],
+                ["Laptop", <?php echo $count_total_items_Laptop; ?>, "#a62e38"],
+                ["Desktop", <?php echo $count_total_items_Desktop; ?>, "#b0c1d9"],
+                ["Workstation", <?php echo $count_total_items_Workstation; ?>, "#0d1f26"],
+                ["Monitor", <?php echo $count_total_items_Monitor; ?>, "#d9ad77"],
+                ["Keyboard", <?php echo $count_total_items_Keyboard; ?>, "#d9763d"],
+                ["Mouse", <?php echo $count_total_items_Mouse; ?>, "#a62e38"],
+                ["Headset", <?php echo $count_total_items_Headset; ?>, "#b0c1d9"],
+                ["Speaker", <?php echo $count_total_items_Speaker; ?>, "#0d1f26"],
+                ["Flashdrive", <?php echo $count_total_items_Flashdrive; ?>, "#d9ad77"],
+                ["External HDD", <?php echo $count_total_items_ExternalHDD; ?>, "#d9763d"],
+                ["HDMI Cable", <?php echo $count_total_items_HDMICable; ?>, "#a62e38"],
+                ["Display Port Cable", <?php echo $count_total_items_DisplayPort; ?>, "#b0c1d9"],
+                ["VGA Cable", <?php echo $count_total_items_VGA; ?>, "#0d1f26"],
               ]);
 
               var view = new google.visualization.DataView(data);
@@ -142,6 +142,30 @@ require_once('nav.php')
               chart.draw(view, options);
             }
             
+            
+            //borrow/return summary chart
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart4);
+
+              function drawChart4() {
+
+                var data = google.visualization.arrayToDataTable([
+                  ['Details', 'Count'],
+                  ['RETURNED ASSETS',      <?php echo $count_returned_items; ?>],
+                  ['BORROWED ASSETS',      <?php echo $cnt; ?>],
+                ]);
+
+                var options = {
+                    title: 'Balance Summary',
+                    pieHole: 0.4,
+                    height: 435,
+                    
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('borrow_return_chart'));
+
+                chart.draw(data, options);
+              }
             
         </script>
   
@@ -250,7 +274,7 @@ require_once('nav.php')
                         <div class="col">
                             <!-- div -->
                             <div style="padding-bottom:60px">
-                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="borrow_return_chart">
                                 </div> 
                             </div>
                         </div>

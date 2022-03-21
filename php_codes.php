@@ -23,6 +23,11 @@ $count_Disposed_items = count_data($connection,"items","status = 'DISPOSED'");
 
 
 
+//to count borrowed/returned items on adm_home.php
+$count_returned_items = count_data($connection,"returned_items","status = 'RETURNED'");
+$cnt = count_data($connection,"borrowed_items","status = 'BORROWED'");
+
+
 
 //to count most borrowed items on adm_home.php
 //count number of Laptops
@@ -63,6 +68,50 @@ $count_MostBorrowed_items_DisplayPort = count_data($connection,"borrowed_items",
 
 //count number of VGA Cable
 $count_MostBorrowed_items_VGA = count_data($connection,"borrowed_items","category = 'VGA Cable'");
+
+
+
+
+//to count total items on adm_home.php
+//count number of Laptops
+$count_total_items_Laptop = count_data($connection,"items","category = 'Laptop'");
+
+//count number of Desktops
+$count_total_items_Desktop = count_data($connection,"items","category = 'Desktop'");
+
+//count number of Workstation
+$count_total_items_Workstation = count_data($connection,"items","category = 'Workstation'");
+
+//count number of Monitor
+$count_total_items_Monitor = count_data($connection,"items","category = 'Monitor'");
+
+//count number of Keyboard
+$count_total_items_Keyboard = count_data($connection,"items","category = 'Keyboard'");
+
+//count number of Mouse
+$count_total_items_Mouse = count_data($connection,"items","category = 'Mouse'");
+
+//count number of Headset
+$count_total_items_Headset = count_data($connection,"items","category = 'Headset'");
+
+//count number of Speaker
+$count_total_items_Speaker = count_data($connection,"items","category = 'Speaker'");
+
+//count number of Flashdrive
+$count_total_items_Flashdrive = count_data($connection,"items","category = 'Flashdrive'");
+
+//count number of External HDD
+$count_total_items_ExternalHDD = count_data($connection,"items","category = 'External HDD'");
+
+//count number of HDMI Cable
+$count_total_items_HDMICable = count_data($connection,"items","category = 'HDMI Cable'");
+
+//count number of Display Port Cable
+$count_total_items_DisplayPort = count_data($connection,"items","category = 'DisplayPort Cable'");
+
+//count number of VGA Cable
+$count_total_items_VGA = count_data($connection,"items","category = 'VGA Cable'");
+
 
 
 //-------------------------------------LOGIN BUTTON LOGIN.PHP
