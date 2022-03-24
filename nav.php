@@ -239,7 +239,10 @@ require_once('modal.php');
                     <nav class="navbar fixed-bottom navbar-dark bg-dark">
                        <a style="color:white ; position : left ; padding-left : 10px">© all rights reserve 2022</a>
                        <a style="color:white ; position : right ; padding-right : 10px">©LNX Systems</a>
+                        
+                        <div style="position: absolute; bottom: 0px;width: 100%;height: 6px;background-image: linear-gradient(to right,#97410e 19%,#15616d 43%,#a32411 57%,#fb9203 81%);"></div>
                     </nav> 
+        
     
     
     </body>
