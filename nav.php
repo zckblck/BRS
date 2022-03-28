@@ -233,6 +233,8 @@ require_once('modal.php');
                         </div>     
                           
                       </div>
+                      
+                      <div style="position: absolute; bottom: 0px;width: 100%;height: 6px;background-image: linear-gradient(to right,#97410e 19%,#15616d 43%,#a32411 57%,#fb9203 81%);"></div>
                     </nav>
 
         
