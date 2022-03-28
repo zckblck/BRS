@@ -745,8 +745,15 @@ if(ISSET($_POST['btn_filter']))
     $query = "SELECT * FROM items WHERE category LIKE '%$dropdowncategory%' AND status = 'AVAILABLE'";
 
     $result = mysqli_query($connection,$query );
- 
-    while($row = $result->fetch_assoc() )
+    
+    if(mysqli_num_rows($result)==0)
+    {
+        $tr_item .= "<tr>
+        <h2 style='font-family:Arial; color:red'>No available items at the moment!</h2>
+        </tr>";
+    }
+    else{
+        while($row = $result->fetch_assoc() )
     {
         $control_no = $row['ctrl_no'];
         $asset_tag_no = $row['asset_tag_no'];
@@ -767,8 +774,8 @@ if(ISSET($_POST['btn_filter']))
                         <td style='font-weight:bold'>$status</td>
                     </tr>  "; 
     }
- 
-    
+    }
+  
 }
 
 
