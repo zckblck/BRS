@@ -12,7 +12,7 @@
       padding: 0.25rem;
     }
     tr.gray th {
-      background: #a2a9ae;
+      background: gray;
       color: black;
     }
     th {    
