@@ -2,7 +2,26 @@
     require_once('functions.php');
     require_once('export_all_logs.php');
 ?>
-
+<style>
+    table {
+      text-align: left;
+      position: relative;
+      border-collapse: collapse; 
+    }
+    th, td {
+      padding: 0.25rem;
+    }
+    tr.gray th {
+      background: #a2a9ae;
+      color: black;
+    }
+    th {    
+        position: sticky;
+        background-color: black;
+        top: 0; /* Don't forget this, required for the stickiness */
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+</style>
 
 <!---------------------------------------------------------------------ADMIN PAGE
 
@@ -155,7 +174,7 @@
                         <table id="update_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th style="font-size:13px">CONTROL NUMBER</th>
                                     <th style="font-size:13px">ASSET TAG NUMBER</th>
                                     <th style="font-size:13px">ITEM NUMBER</th>
@@ -268,7 +287,7 @@
                         <table id="delete_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th>CONTROL NUMBER</th>
                                     <th>ASSET TAG NUMBER</th>
                                     <th>ITEM NUMBER</th>
@@ -399,7 +418,7 @@
                         <table id="manage_returner_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th>USER ID</th>
                                     <th>USER NAME</th>
                                     <th>PASSWORD (ENCRYPTED)</th>
@@ -450,7 +469,7 @@
                         <table class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th style="font-size:13px">LOG TYPE</th>
                                     <th style="font-size:13px">LOG DATE</th>
                                     <th style="font-size:13px">LOG BY</th>
@@ -518,7 +537,7 @@
                         <table class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th style="font-size:13px">CONTROL NUMBER</th>
                                     <th style="font-size:13px">ASSET TAG NUMBER</th>
                                     <th style="font-size:13px">ITEM NUMBER</th>
@@ -577,7 +596,7 @@
                         <table class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th style="font-size:13px">CONTROL NUMBER</th>
                                     <th style="font-size:13px">ASSET TAG NUMBER</th>
                                     <th style="font-size:13px">ITEM NUMBER</th>
@@ -696,7 +715,7 @@
                         <table id="borrow_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th>CONTROL NUMBER</th>
                                     <th>ASSET TAG NUMBER</th>
                                     <th>ITEM NUMBER</th>
@@ -800,7 +819,7 @@
                         <table id="return_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
-                                <tr style="text-align:center" padding: 70px 0;>
+                                <tr style="text-align:center" padding: 70px 0; class="gray">
                                     <th>CONTROL NUMBER</th>
                                     <th>ASSET TAG NUMBER</th>
                                     <th>ITEM NUMBER</th>

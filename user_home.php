@@ -71,7 +71,7 @@ require_once('nav.php');
                                 <table table class="table table-hover border-dark" border=1>
 
                                     <thead>
-                                        <tr style="text-align:center" padding: 70px 0;>
+                                        <tr style="text-align:center" padding: 70px 0; class="gray">
                                             <th style="font-size:13px">CONTROL NUMBER</th>
                                             <th style="font-size:13px">ASSET TAG NUMBER</th>
                                             <th style="font-size:13px">ITEM NUMBER</th>

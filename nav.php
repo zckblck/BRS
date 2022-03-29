@@ -1,6 +1,5 @@
 <?php
 
-require_once('connection.php');
 require_once('php_codes.php');
 require_once('restriction.php');
 require_once('modal.php');

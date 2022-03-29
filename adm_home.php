@@ -107,7 +107,7 @@ require_once('nav.php')
             
             function drawChart3() {
               var data = google.visualization.arrayToDataTable([
-                ["Categoty", "Count", { role: "style" } ],
+                ["Category", "Count", { role: "style" } ],
                 ["Laptop", <?php echo $count_total_items_Laptop; ?>, "#a62e38"],
                 ["Desktop", <?php echo $count_total_items_Desktop; ?>, "#b0c1d9"],
                 ["Workstation", <?php echo $count_total_items_Workstation; ?>, "#0d1f26"],
@@ -228,7 +228,7 @@ require_once('nav.php')
                                             <table class="table table-hover border-dark" border=1>
 
                                                 <thead>
-                                                    <tr style="text-align:center" padding: 70px 0;>
+                                                    <tr style="text-align:center" padding: 70px 0; class="gray">
                                                         <th>BORROWED DATE / TIME</th>
                                                         <th>CURRENTLY BORROWED BY</th>
                                                         <th>CONTROL NUMBER</th>
@@ -313,7 +313,7 @@ require_once('nav.php')
                                     <table class="table table-hover border-dark" border=1>
 
                                         <thead>
-                                            <tr style="text-align:center" padding: 70px 0;>    
+                                            <tr style="text-align:center" padding: 70px 0; class="gray">    
                                                 <th style="font-size:13px">CONTROL NUMBER</th>
                                                 <th style="font-size:13px">ASSET TAG NUMBER</th>
                                                 <th style="font-size:13px">ITEM NUMBER</th>
@@ -356,7 +356,7 @@ require_once('nav.php')
                                     <table class="table table-hover border-dark" border=1>
 
                                         <thead>
-                                            <tr style="text-align:center" padding: 70px 0;>
+                                            <tr style="text-align:center" padding: 70px 0; class="gray">
                                                 <th>CONTROL NUMBER</th>
                                                 <th>ASSET TAG NUMBER</th>
                                                 <th>ITEM NUMBER</th>
@@ -400,7 +400,7 @@ require_once('nav.php')
                                     <table class="table table-hover border-dark" border=1>
 
                                         <thead>
-                                            <tr style="text-align:center" padding: 70px 0;>
+                                            <tr style="text-align:center" padding: 70px 0; class="gray">
                                                 <th>CONTROL NUMBER</th>
                                                 <th>ASSET TAG NUMBER</th>
                                                 <th>ITEM NUMBER</th>
@@ -441,7 +441,7 @@ require_once('nav.php')
                                     <table class="table table-hover border-dark" border=1>
 
                                         <thead>
-                                            <tr style="text-align:center" padding: 70px 0;>
+                                            <tr style="text-align:center" padding: 70px 0; class="gray">
                                                 <th>CONTROL NUMBER</th>
                                                 <th>ASSET TAG NUMBER</th>
                                                 <th>ITEM NUMBER</th>
@@ -482,7 +482,7 @@ require_once('nav.php')
                                     <table class="table table-hover border-dark" border=1>
 
                                         <thead>
-                                            <tr style="text-align:center" padding: 70px 0;>
+                                            <tr style="text-align:center" padding: 70px 0; class="gray">
                                                 <th>CONTROL NUMBER</th>
                                                 <th>ASSET TAG NUMBER</th>
                                                 <th>ITEM NUMBER</th>
