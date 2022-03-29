@@ -19,9 +19,16 @@ require_once('nav.php');
     
     
     <body>
+        
+        <style>
+            
+            body{
+                background: linear-gradient(141deg, #f9f9f7 11%, #efeee8 22%, #e5e3d9 51%, #dad8ca 75%, #d0cdbb 88%);
+            }
+        
+        </style>
 
-        
-        
+
           <div class="container-fluid">
               
               
@@ -51,45 +58,59 @@ require_once('nav.php');
                   
                   <div class="col" style="position:right; padding-right:150px">
                       
-                    <strong style="padding-bottom:5px">SELECT TO VIEW AVAILABLE ITEMS</strong>
-
-                    <form method="post">
-                        <div class="row">
-                            <div class="col">
-                                <?php echo create_select_dropdown("SELECT * from categories ",$connection,"dropdown_categories","category","category","form-control") ?> 
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-success" type="submit" name="btn_filter">Filter</button>
-                            </div> 
-                        </div>
-                    </form>
                     
                       
-                    <div class="row">
-                        <div class="col shadow-lg rounded" style="overflow:scroll; height:650px">
-                            <!-- Table Grid-->
-                                <table table class="table table-hover border-dark" border=1>
+                      
+                      <div class="border border-5   shadow-lg mb-5 bg-white rounded" style="" id="">
+                                    <div class="card">
+                                      <div class="card-header" style="background-color: #15616d ; color: #dbe2ef">
+                                          <strong>SELECT TO VIEW AVAILABLE ITEMS</strong>
 
-                                    <thead>
-                                        <tr style="text-align:center" padding: 70px 0; class="gray">
-                                            <th style="font-size:13px">CONTROL NUMBER</th>
-                                            <th style="font-size:13px">ASSET TAG NUMBER</th>
-                                            <th style="font-size:13px">ITEM NUMBER</th>
-                                            <th style="font-size:13px">CATEGORY</th>
-                                            <th style="font-size:13px">SERIAL NUMBER</th>
-                                            <th style="font-size:13px">ITEM DETAILS</th>
-                                            <th style="font-size:13px">STATUS</th>
+                                            <form method="post">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <?php echo create_select_dropdown("SELECT * from categories ",$connection,"dropdown_categories","category","category","form-control") ?> 
+                                                    </div>
+                                                    <div class="col">
+                                                        <button class="btn btn-success" type="submit" name="btn_filter">Check Availability</button>
+                                                    </div> 
+                                                </div>
+                                            </form>
+                                          
+                                        </div>
+                                      <div class="card-body">  
+                                        <div class="col" style="overflow:scroll ; height:600px">
+                                            <!-- Table Grid-->
+                                            <table class="table table-hover border-dark" border=1>
 
-                                        </tr>
-                                    </thead>
+                                                <thead>
+                                                    <tr style="text-align:center" padding: 70px 0; class="gray">
+                                                        <th style="font-size:13px">CONTROL NUMBER</th>
+                                                        <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                                        <th style="font-size:13px">ITEM NUMBER</th>
+                                                        <th style="font-size:13px">CATEGORY</th>
+                                                        <th style="font-size:13px">SERIAL NUMBER</th>
+                                                        <th style="font-size:13px">ITEM DETAILS</th>
+                                                        <th style="font-size:13px">STATUS</th>
 
-                                    <tbody style="text-align:center">
-                                        <?php echo $tr_item ?>
-                                    </tbody>
+                                                    </tr>
+                                                </thead>
 
-                                </table>
-                        </div>
-                    </div>
+                                                <tbody style="text-align:center">
+
+                                                    <?php echo $tr_item ?>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                      
+                      
+                    
+                      
 
                   </div> 
               </div>

@@ -26,6 +26,10 @@ require_once('nav.php')
                 color: #dbe2ef;
                 width: 300PX;
             } 
+            
+            body{
+                background: linear-gradient(141deg, #f9f9f7 11%, #efeee8 22%, #e5e3d9 51%, #dad8ca 75%, #d0cdbb 88%);
+            }
         </style>
         
     
