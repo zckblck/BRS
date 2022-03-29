@@ -12,13 +12,13 @@
       padding: 0.25rem;
     }
     tr.gray th {
-      background: gray;
+      background: #9eb89e;
       color: black;
     }
     th {    
         position: sticky;
         background-color: black;
-        top: 0; /* Don't forget this, required for the stickiness */
+        top: -1; /* Don't forget this, required for the stickiness */
         box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
     }
 </style>
