@@ -454,7 +454,7 @@ while($row = $result->fetch_assoc() )
 
 
 //------------------display on table on ACTIVITY LOGS MODAL adm_home.php
-$query = "SELECT * FROM logs";
+$query = "SELECT * FROM logs ORDER BY `logs`.`id` DESC";
 
 $result = mysqli_query($connection,$query);
 
@@ -517,7 +517,7 @@ while($row = $result->fetch_assoc() )
 
 
 //------------------display on table on BORROWED LOGS MODAL adm_home.php
-$query = "SELECT * FROM borrowed_items";
+$query = "SELECT * FROM borrowed_items ORDER BY `borrowed_items`.`id` DESC";
 
 $result = mysqli_query($connection,$query);
 
@@ -558,7 +558,7 @@ while($row = $result->fetch_assoc() )
 
 
 //------------------display on table on RETURNED LOGS MODAL adm_home.php
-$query = "SELECT * FROM returned_items";
+$query = "SELECT * FROM returned_items ORDER BY `returned_items`.`id` DESC";
 
 $result = mysqli_query($connection,$query);
 
