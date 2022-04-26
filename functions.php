@@ -790,6 +790,7 @@ $result = mysqli_query($connection,$query);
 
 $tr_borrow = "";
 $counter = 0;
+
 while($row = $result->fetch_assoc() )
 {
     $control_no = $row['ctrl_no'];
@@ -825,33 +826,45 @@ $result = mysqli_query($connection,$query);
 
 $tr_return = "";
 $counter = 0;
-while($row = $result->fetch_assoc() )
-{
-    $control_no = $row['ctrl_no'];
-    $asset_tag_no = $row['asset_tag_no'];
-    $item_no = $row['item_no'];
-    $category = $row['category'];
-    $serial_no = $row['serial_no'];
-    $item_details = $row['item_details'];
-    $remarks = $row['remarks'];
-    $status = $row['status'];
-    $borrowed_by = $row['borrowed_by'];
-    
-    $counter++;
 
-    //to click on table
-    $tr_return .= "<tr onclick='AJAX_RETURN($counter)'>
-            <td style='font-weight:bold'>$control_no</td>
-            <td>$asset_tag_no</td>
-            <td>$item_no</td>
-            <td style='font-style:oblique;font-weight:bold'>$category</td>
-            <td>$serial_no</td>
-            <td>$item_details</td>
-            <td>$remarks</td>
-            <td>$status</td>
-            <td style='font-weight:bold'>$borrowed_by</td>
-        </tr>  "; 
+if(mysqli_num_rows($result)==0)
+    {
+        $tr_return .= "<tr>
+        <h2 style='font-family:Arial; color:red'>No returnable items at the moment!</h2>
+        </tr>";
     }
+else 
+{
+    while($row = $result->fetch_assoc() )
+    {
+        $control_no = $row['ctrl_no'];
+        $asset_tag_no = $row['asset_tag_no'];
+        $item_no = $row['item_no'];
+        $category = $row['category'];
+        $serial_no = $row['serial_no'];
+        $item_details = $row['item_details'];
+        $remarks = $row['remarks'];
+        $status = $row['status'];
+        $borrowed_by = $row['borrowed_by'];
+
+        $counter++;
+
+        //to click on table
+        $tr_return .= "<tr onclick='AJAX_RETURN($counter)'>
+                <td style='font-weight:bold'>$control_no</td>
+                <td>$asset_tag_no</td>
+                <td>$item_no</td>
+                <td style='font-style:oblique;font-weight:bold'>$category</td>
+                <td>$serial_no</td>
+                <td>$item_details</td>
+                <td>$remarks</td>
+                <td>$status</td>
+                <td style='font-weight:bold'>$borrowed_by</td>
+            </tr>  "; 
+        }
+    
+}
+
 
 
 

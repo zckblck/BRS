@@ -772,7 +772,7 @@
             <div class="row">
                 <div class="col-3">
                      <div class="form-floating mb-3">
-                          <input id="return_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly  />
+                          <input id="return_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly />
                           <label for="return_ctrl_no">Control Number</label>
                       </div>
 
@@ -850,7 +850,17 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM">RETURN</button>
+        <?php   if(mysqli_num_rows($result)==0 || empty($_POST['txt_ctrl_no']))
+                { ?>
+                    <button type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM" disabled>RETURN</button>
+        <?php   }
+                else 
+                {  ?>
+                    <button type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM">RETURN</button>
+        <?php           
+                }
+            ?>
+          
         </div>
       </div>
             
