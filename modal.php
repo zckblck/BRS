@@ -202,7 +202,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" name="btn_update_item" value="UPDATE ITEM">UPDATE</button>
+          <button id="update_item_btn_id" type="submit" class="btn btn-primary" name="btn_update_item" value="UPDATE ITEM">UPDATE</button>
         </div>
       </div>
             
@@ -314,7 +314,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-danger" name="btn_delete_item" value="DELETE ITEM">DELETE</button>
+          <button id="delete_item_btn_id" type="submit" class="btn btn-danger" name="btn_delete_item" value="DELETE ITEM">DELETE</button>
         </div>
       </div>
             
@@ -437,7 +437,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" name="btn_update_manage_returner" >UPDATE USER</button>
+          <button id="update_manage_returner_btn_id" type="submit" class="btn btn-primary" name="btn_update_manage_returner" >UPDATE USER</button>
         </div>
       </div>
             
@@ -704,7 +704,7 @@
                       </div>
                     
                       <div class="form-floating mb-3">
-                          <input id="date_time" type="date" class="form-control"  name="borrow_date_time" placeholder="Returning Plan Date" required / >
+                          <input id="borrow_date_time" type="date" class="form-control"  name="borrow_date_time" placeholder="Returning Plan Date" required / >
                           <label for="date_time">Returning Plan Date</label>
                       </div>
 
@@ -745,7 +745,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-warning" name="btn_borrow_item" value="BORROW ITEM">BORROW</button>
+          <button id="borrow_item_btn_id" type="submit" class="btn btn-warning" name="btn_borrow_item" value="BORROW ITEM">BORROW</button>
         </div>
       </div>
             

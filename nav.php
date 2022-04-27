@@ -133,11 +133,24 @@ require_once('modal.php');
 
             var minDate= year + '-' + month + '-' + day;
 
-            $('#date_time').attr('min', minDate);
+            $('#borrow_date_time').attr('min', minDate);
         });
         
-        //DISABLE RETURN BUTTON WHEN NO TEXT IN CTRL_NO IS DISPLAYED ON RETURN_MODAL IN MODAL.PHP
+        //DISABLE UPDATE BUTTON ON BORROW_ITEM IN MODAL.PHP
+        $('#borrow_item_btn_id').prop('disabled', true);
+        
+        //DISABLE RETURN BUTTON ON RETURN_MODAL IN MODAL.PHP
         $('#return_item_btn_id').prop('disabled', true);
+        
+        //DISABLE UPDATE BUTTON ON UPDATE_RETURNER_FORM IN MODAL.PHP
+        $('#update_manage_returner_btn_id').prop('disabled', true);
+        
+        //DISABLE UPDATE BUTTON ON DELETE_MODAL IN MODAL.PHP
+        $('#delete_item_btn_id').prop('disabled', true);
+        
+        //DISABLE UPDATE BUTTON ON UPDATE_ITEM IN MODAL.PHP
+        $('#update_item_btn_id').prop('disabled', true);
+        
            
         
     </script>

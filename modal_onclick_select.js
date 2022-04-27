@@ -130,7 +130,9 @@ function AJAX_UPDATE(id)
            $("#update_remarks").val(data_info[6]);
            $("#update_status").val(data_info[7]);
             
-              
+            //to enable the update button after click in <tr>
+            $('#update_item_btn_id').prop('disabled' , false);  
+            
           }
      });
     });
@@ -160,7 +162,9 @@ function AJAX_DELETE(id)
            $("#delete_remarks").val(data_info[6]);
            $("#delete_status").val(data_info[7]);
             
-              
+            //to enable the delete button after click in <tr>
+            $('#delete_item_btn_id').prop('disabled' , false);  
+            
           }
      });
     });
@@ -186,7 +190,8 @@ function AJAX_MANAGE_RETURNER(id)
            $("#manage_returner_UPDATE_password").val(data_info[2]);
            $("#manage_returner_UPDATE_department").val(data_info[3]);
 
-            
+            //to enable the update_user button after click in <tr>
+            $('#update_manage_returner_btn_id').prop('disabled' , false);
               
           }
      });
@@ -224,6 +229,8 @@ function AJAX_BORROW(id)
            $("#borrow_remarks").val(data_info[6]);
            $("#borrow_status").val(data_info[7]);
             
+            //to enable the borrow button after click in <tr>
+            $('#borrow_item_btn_id').prop('disabled' , false); 
               
           }
      });
