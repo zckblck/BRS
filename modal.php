@@ -850,16 +850,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <?php   if(mysqli_num_rows($result)==0 || empty($_POST['txt_ctrl_no']))
-                { ?>
-                    <button type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM" disabled>RETURN</button>
-        <?php   }
-                else 
-                {  ?>
-                    <button type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM">RETURN</button>
-        <?php           
-                }
-            ?>
+          <button id="return_item_btn_id" type="submit" class="btn btn-danger" name="btn_return_item" value="RETURN ITEM">RETURN</button>
           
         </div>
       </div>

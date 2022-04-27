@@ -255,7 +255,8 @@ function AJAX_RETURN(id)
            $("#return_remarks").val(data_info[6]);
            $("#return_status").val(data_info[7]);
             
-              
+           //to enable the return button after click in <tr>
+        $('#return_item_btn_id').prop('disabled' , false);
           }
      });
     });

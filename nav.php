@@ -136,6 +136,10 @@ require_once('modal.php');
             $('#date_time').attr('min', minDate);
         });
         
+        //DISABLE RETURN BUTTON WHEN NO TEXT IN CTRL_NO IS DISPLAYED ON RETURN_MODAL IN MODAL.PHP
+        $('#return_item_btn_id').prop('disabled', true);
+           
+        
     </script>
     
     <body >
