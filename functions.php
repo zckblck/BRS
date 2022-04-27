@@ -830,7 +830,7 @@ $counter = 0;
 if(mysqli_num_rows($result)==0)
     {
         $tr_return .= "<tr>
-        <h2 style='font-family:Arial; color:red'>No returnable items at the moment!</h2>
+        <h2 style='font-family:Arial; color:red'>No items at the moment!</h2>
         </tr>";
     }
 else 

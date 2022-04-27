@@ -5,18 +5,8 @@ require_once('nav.php');
 ?>
 
 
-
-
-
-
-
 <html>
-    <head>
-        <title>Borrowing System</title>
-    </head>
-    
-    
-    
+
     
     <body>
         

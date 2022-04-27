@@ -9,7 +9,8 @@ require_once('connection.php');
 
     <head>
     
-    <title>Login</title>
+    <title>Borrowing System</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/Bootstrap513/favicon.ico" />
         
         <link href="./Bootstrap513/bootstrap.min.css" rel="stylesheet">  <!-- CSS only -->
         <script src="./Bootstrap513/bootstrap.bundle.min.js" ></script>  <!-- JavaScript Bundle with Popper -->

@@ -8,12 +8,7 @@ require_once('nav.php')
 
 
 <html>
-    <head>
-        <title>Borrowing </title>
-    </head>
     
-    
- 
     <body>
         
         <style>
